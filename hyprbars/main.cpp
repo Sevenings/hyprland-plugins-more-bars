@@ -23,6 +23,7 @@ void onNewWindow(void* self, std::any data) {
         std::unique_ptr<CHyprBar> bar = std::make_unique<CHyprBar>(PWINDOW);
         g_pGlobalState->bars.push_back(bar.get());
         HyprlandAPI::addWindowDecoration(PHANDLE, PWINDOW, std::move(bar));
+        HyprlandAPI::addNotification(PHANDLE, "Window wants borders", CColor{0.2, 1.0, 0.2, 1.0}, 5000);
     }
 }
 
